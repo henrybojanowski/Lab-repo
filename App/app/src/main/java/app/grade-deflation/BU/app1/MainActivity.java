@@ -12,13 +12,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
             button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
             buttonMul , button10 , buttonC , buttonEqual ;
 
-    EditText edt1 ;
+    EditText edt1, question ;
 
     float mValueOne , mValueTwo ;
 
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
         edt1 = (EditText) findViewById(R.id.edt1);
-
+        question = (EditText) findViewById(R.id.Question);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +121,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        int num1, num2;
+        Random ran = new Random();
+        num1 = ran.nextInt(100);
+        num2 = ran.nextInt(100);
+        question.setText(num1+" + "+ num2);
 
 
 //        buttonAdd.setOnClickListener(new View.OnClickListener() {
