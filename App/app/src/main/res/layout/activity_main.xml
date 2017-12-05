@@ -10,7 +10,9 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/Question"
         android:id="@+id/edt1"/>
+
 
 
 
@@ -24,9 +26,10 @@
         android:id="@+id/button1"
         android:layout_marginTop="94dp"
         android:layout_below="@+id/edt1"
-        android:layout_toStartOf="@+id/button4"
         android:layout_alignRight="@+id/button4"
         android:layout_alignEnd="@+id/button4" />
+        <!--android:layout_toStartOf="@+id/Question"-->
+
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -190,5 +193,16 @@
         android:layout_below="@+id/button10"
         android:layout_marginTop="37dp"
         android:text="Enter" />
+
+    <EditText
+        android:id="@+id/Question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="1+1" />
 
 </RelativeLayout>
