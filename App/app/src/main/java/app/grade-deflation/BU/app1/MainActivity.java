@@ -14,17 +14,31 @@ import android.widget.Toast;
 
 import java.util.Random;
 
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
             button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
-            buttonMul , button10 , buttonC , buttonEqual ;
+            buttonMul , button10 , buttonC , buttonEqual, buttonNext ;
 
     EditText edt1, question ;
 
-    float mValueOne , mValueTwo ;
+    float mValueOne , mValueTwo, answer ;
 
-    boolean mAddition , mSubtract ,mMultiplication ,mDivision ;
+    boolean mAddition , mSubtract ,mMultiplication ,mDivision, first, correct ;
+    int fc = 1, count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDivision = (Button) findViewById(R.id.buttondiv);*/
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
+        buttonNext = (Button) findViewById(R.id.buttonNext);
         edt1 = (EditText) findViewById(R.id.edt1);
         question = (EditText) findViewById(R.id.Question);
 
@@ -121,12 +136,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (fc == 1) {
+                    question.setText("Hi, I am a super smart AI.");
+                    fc = 2;
+                }
+                else if (fc == 2) {
+                    question.setText("I want you to answer my math questions");
+                    fc = 3;
+                }
+                else{
+                    question.setText("OK, what is 4+5=");
+                    first = false;
+                    correct = true;
+                    answer = 9;
+                }
+            }
+        });
+
+/*
         int num1, num2;
         Random ran = new Random();
         num1 = ran.nextInt(100);
         num2 = ran.nextInt(100);
         question.setText(num1+" + "+ num2);
-
+*/
 
 //        buttonAdd.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -174,6 +210,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mValueTwo = Float.parseFloat(edt1.getText() + "");
+
+                if(mValueTwo == answer){
+                    count++;
+                }
+                else{
+                    //delete app
+                }
+
+                if(count == 1){
+                    question.setText("Correct! What is 2*2=");
+                    answer = 4;
+                }
+                else if(count == 2){
+                    question.setText("Correct! What is 4/2=");
+                    answer = 2;
+                }
 
                 /*if (mAddition == true){
 
