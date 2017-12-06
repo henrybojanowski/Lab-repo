@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
 //                edt1.setText(null);
 //            }
 //        });
-
+//      Enter should redefine.
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
