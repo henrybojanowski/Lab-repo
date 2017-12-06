@@ -218,4 +218,13 @@
         android:layout_marginRight="22dp"
         android:text="Next" />
 
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttoneql"
+        android:layout_toLeftOf="@+id/buttonC"
+        android:layout_toStartOf="@+id/buttonC"
+        android:id="@+id/but1" />
+
 </RelativeLayout>

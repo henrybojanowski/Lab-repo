@@ -2,6 +2,7 @@ package com.hackpundit.www.assignment1;
 
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -29,12 +31,22 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+
+
+
     Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
             button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
             buttonMul , button10 , buttonC , buttonEqual, buttonNext ;
 
     EditText edt1, question ;
 
+    String[] QuestionsArray={"OK, What is 4+5?","what is 5+8","What is 8*3"};
+    float[] answersArray={9,13,24};
+
+    int qac=0; //questions array counter
+    int aac=0; //answers array counter
     float mValueOne , mValueTwo, answer ;
 
     boolean mAddition , mSubtract ,mMultiplication ,mDivision, first, correct ;
@@ -136,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -147,11 +160,15 @@ public class MainActivity extends AppCompatActivity {
                     question.setText("I want you to answer my math questions");
                     fc = 3;
                 }
-                else{
-                    question.setText("OK, what is 4+5=");
-                    first = false;
-                    correct = true;
-                    answer = 9;
+                else if(qac<=QuestionsArray.length)
+                {
+                    question.setText(QuestionsArray[qac]);
+                    qac++;
+
+                }
+                else
+                {
+                    question.setText("you have completed all the questions! great job");
                 }
             }
         });
@@ -211,21 +228,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mValueTwo = Float.parseFloat(edt1.getText() + "");
 
-                if(mValueTwo == answer){
-                    count++;
-                }
-                else{
-                    //delete app
-                }
-
-                if(count == 1){
-                    question.setText("Correct! What is 2*2=");
-                    answer = 4;
-                }
-                else if(count == 2){
-                    question.setText("Correct! What is 4/2=");
-                    answer = 2;
-                }
+//                if(mValueTwo == answer){
+//                    count++;
+//                }
+//                else{
+//                    //delete app
+//                }
+//
+//                if(count == 1){
+//                    question.setText("Correct! What is 2*2=");
+//                    answer = 4;
+//                }
+//                else if(count == 2){
+//                    question.setText("Correct! What is 4/2=");
+//                    answer = 2;
+//                }
 
                 /*if (mAddition == true){
 
