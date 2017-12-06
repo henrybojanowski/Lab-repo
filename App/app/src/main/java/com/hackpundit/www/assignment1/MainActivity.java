@@ -44,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
     String[] QuestionsArray={"OK, What is 4+5?","what is 5+8","What is 8*3"};
     float[] answersArray={9,13,24};
+//    boolean answeredCorrectly;
 
     int qac=0; //questions array counter
     int aac=0; //answers array counter
-    float mValueOne , mValueTwo, answer ;
-
+    float mValueOne , mValueTwo, retry ;
     boolean mAddition , mSubtract ,mMultiplication ,mDivision, first, correct ;
     int fc = 1, count = 0;
 
@@ -163,7 +163,9 @@ public class MainActivity extends AppCompatActivity {
                 else if(qac<=QuestionsArray.length)
                 {
                     question.setText(QuestionsArray[qac]);
-                    qac++;
+
+
+
 
                 }
                 else
@@ -228,6 +230,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mValueTwo = Float.parseFloat(edt1.getText() + "");
 
+                if(answersArray[aac]==mValueTwo)
+                {
+                    question.setText("Correct! press next button for next question");
+                    aac++;
+                    qac++;
+                }
+                else
+                {
+                    question.setText("Incorrect! try again! ");
+                    question.append(QuestionsArray[qac]);
+                }
 //                if(mValueTwo == answer){
 //                    count++;
 //                }
