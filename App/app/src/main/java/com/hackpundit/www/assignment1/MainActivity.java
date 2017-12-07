@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     String[] QuestionsArray={"OK, What is 4+5?","what is 5+8","What is 8*3"};
     float[] answersArray={9,13,24};
+    float answer;
 //    boolean answeredCorrectly;
 
     int qac=0; //questions array counter
@@ -148,22 +149,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        question.setText("Hi, I am a super smart AI."); // show this text at beginning
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (fc == 1) {
-                    question.setText("Hi, I am a super smart AI.");
+                    question.setText("I want you to answer my math questions");
                     fc = 2;
                 }
-                else if (fc == 2) {
-                    question.setText("I want you to answer my math questions");
-                    fc = 3;
-                }
-                else if(qac<=QuestionsArray.length)
+                else if(count < 10)
                 {
-                    question.setText(QuestionsArray[qac]);
-
+                    int num1, num2, num3;
+                    String[] OperatorArray={"+","-"};
+                    Random ran = new Random();
+                    num1 = ran.nextInt(100);
+                    num2 = ran.nextInt(100);
+                    num3 = ran.nextInt(2);
+                    if(num3 == 0) {
+                        question.setText("What is " + num1 + OperatorArray[num3] + num2 + "?");
+                        answer = num1 + num2;
+                    }
+                    else{
+                        question.setText("What is " + num1 + OperatorArray[num3] + num2 + "?");
+                        answer = num1 - num2;
+                    }
+                    //question.setText(QuestionsArray[qac]);
 
 
 
@@ -230,16 +240,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mValueTwo = Float.parseFloat(edt1.getText() + "");
 
-                if(answersArray[aac]==mValueTwo)
+                if(answer==mValueTwo)
                 {
                     question.setText("Correct! press next button for next question");
+                    edt1.setText("");
                     aac++;
                     qac++;
+                    count++;
                 }
                 else
                 {
-                    question.setText("Incorrect! try again! ");
-                    question.append(QuestionsArray[qac]);
+                    question.setText("You are lose...");
+                    edt1.setText("");
+                   // question.append(QuestionsArray[qac]);
                 }
 //                if(mValueTwo == answer){
 //                    count++;
