@@ -167,10 +167,12 @@ public class MainActivity extends AppCompatActivity {
                     num3 = ran.nextInt(2);
                     if(num3 == 0) {
                         question.setText("What is " + num1 + OperatorArray[num3] + num2 + "?");
+                        buttonNext.setEnabled(false); //so you can't click on it until after you press equals
                         answer = num1 + num2;
                     }
                     else{
                         question.setText("What is " + num1 + OperatorArray[num3] + num2 + "?");
+                        buttonNext.setEnabled(false); //so you can't click on it until after you press equals
                         answer = num1 - num2;
                     }
                     //question.setText(QuestionsArray[qac]);
@@ -243,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
                 if(answer==mValueTwo)
                 {
                     question.setText("Correct! press next button for next question");
+                    buttonNext.setEnabled(true); //now you can click the next button!
                     edt1.setText("");
                     aac++;
                     qac++;
