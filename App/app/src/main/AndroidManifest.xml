@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".first"
             android:focusableInTouchMode="true"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <!-- <activity android:name=".Main2Activity"></activity> -->
-        <activity android:name=".second"></activity>
+        <activity android:name=".second" />
+        <activity android:name=".newMain"></activity>
     </application>
 
 </manifest>

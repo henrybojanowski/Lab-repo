@@ -1,5 +1,7 @@
 package com.hackpundit.www.assignment1;
 
+//import android.support.v7.app.AppCompatActivity;
+//import android.os.Bundle;
 
 
 import android.content.Intent;
@@ -29,9 +31,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
-
-
+public class newMain extends AppCompatActivity {
 
 
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
 
-                Intent toy=new Intent(MainActivity.this,second.class);
+                Intent toy=new Intent(newMain.this,second.class);
                 startActivity(toy);
             }
         });
@@ -73,9 +73,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_main);
         init();
 
         button0 = (Button) findViewById(R.id.button0);
@@ -281,7 +282,7 @@ public class MainActivity extends AppCompatActivity {
                     repeat=true;
                     buttonNext.setEnabled(true);
                     edt1.setText("");
-                   // question.append(QuestionsArray[qac]);
+                    // question.append(QuestionsArray[qac]);
                 }
 //                if(mValueTwo == answer){
 //                    count++;
@@ -337,7 +338,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 }
+
