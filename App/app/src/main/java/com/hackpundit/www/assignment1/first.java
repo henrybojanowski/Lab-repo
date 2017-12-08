@@ -60,6 +60,8 @@ public class first extends AppCompatActivity {
         setContentView(R.layout.activity_first);
 
         begin();
+
+        
 //
 //        button0 = (Button) findViewById(R.id.button0);
 //        button1 = (Button) findViewById(R.id.button1);
