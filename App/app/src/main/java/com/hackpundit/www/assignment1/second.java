@@ -25,7 +25,7 @@ public class second extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
 
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
@@ -121,12 +121,14 @@ public class second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                mValueOne = Float.parseFloat(edt1.getText() + "");
-                mAddition = true;
-                edt1.setText(null);
+                if (edt1 == null){
+                    edt1.setText("");
+                }else {
+                    mValueOne = Float.parseFloat(edt1.getText() + "");
+                    mAddition = true;
+                    edt1.setText(null);
                 }
-
+            }
         });
 
         buttonSub.setOnClickListener(new View.OnClickListener() {
