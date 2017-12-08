@@ -11,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Question"
-        android:id="@+id/edt1"/>
+        android:id="@+id/edt1"
+        android:focusableInTouchMode="false"
+        android:focusable="false"
+        />
 
 
 
@@ -205,7 +208,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:focusableInTouchMode="false"/>
 
     <Button
         android:id="@+id/buttonNext"
@@ -219,12 +223,12 @@
         android:text="Next" />
 
     <Button
-        android:text="Button"
+        android:text="Calc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttoneql"
-        android:layout_toLeftOf="@+id/buttonC"
-        android:layout_toStartOf="@+id/buttonC"
-        android:id="@+id/but1" />
+        android:id="@+id/but1"
+        android:layout_above="@+id/button2"
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2" />
 
 </RelativeLayout>

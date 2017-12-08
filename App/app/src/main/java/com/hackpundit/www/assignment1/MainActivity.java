@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     String[] QuestionsArray={"OK, What is 4+5?","what is 5+8","What is 8*3"};
     float[] answersArray={9,13,24};
     float answer;
+    boolean repeat=false;
 //    boolean answeredCorrectly;
 
     int qac=0; //questions array counter
@@ -53,10 +54,29 @@ public class MainActivity extends AppCompatActivity {
     boolean mAddition , mSubtract ,mMultiplication ,mDivision, first, correct ;
     int fc = 1, count = 0;
 
+
+    public Button but1;
+    public void init()
+    {
+        but1=(Button)findViewById(R.id.but1);
+        but1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent toy=new Intent(MainActivity.this,second.class);
+                startActivity(toy);
+            }
+        });
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
 
         button0 = (Button) findViewById(R.id.button0);
         button1 = (Button) findViewById(R.id.button1);
@@ -78,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         buttonNext = (Button) findViewById(R.id.buttonNext);
         edt1 = (EditText) findViewById(R.id.edt1);
         question = (EditText) findViewById(R.id.Question);
+
+        but1.setEnabled(false); //set this initially to false so that you cannot click it
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
                     question.setText("I want you to answer my math questions");
                     fc = 2;
                 }
-                else if(count < 10)
+                else if(count < 3)
                 {
                     int num1, num2, num3;
                     String[] OperatorArray={"+","-"};
@@ -183,6 +205,8 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     question.setText("you have completed all the questions! great job");
+                    but1.setEnabled(true);
+                    question.append("press calc");
                 }
             }
         });
@@ -253,7 +277,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    question.setText("You are lose...");
+                    question.setText("That's Incorrect! Press Next for another question");
+                    repeat=true;
+                    buttonNext.setEnabled(true);
                     edt1.setText("");
                    // question.append(QuestionsArray[qac]);
                 }
