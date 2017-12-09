@@ -232,7 +232,7 @@
         <!--android:layout_toStartOf="@+id/button2" />-->
 
     <Button
-        android:text="start program"
+        android:text="begin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/start"
@@ -255,7 +255,7 @@
 
         android:maxLines ="4"
         android:text="This is no traditional calculator app! You will have to do some actual math before you gain access to the calculator!"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
