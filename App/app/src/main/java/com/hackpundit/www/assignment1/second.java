@@ -202,7 +202,10 @@ public class second extends AppCompatActivity {
                 edt1.setText(edt1.getText()+".");
             }
         });
-
+        if(newMain.wrongNum==0)
+        {
+            editText2.setText("You got 0 questions wrong! You can use all buttons");
+        }
 
         if(newMain.wrongNum == 1){
             buttonAdd.setEnabled(false);

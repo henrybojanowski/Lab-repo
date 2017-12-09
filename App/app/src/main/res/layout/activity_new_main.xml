@@ -111,7 +111,7 @@
         android:layout_alignLeft="@+id/button6"
         android:layout_alignStart="@+id/button6" />
 
-    <!--<Button
+    <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,7 +146,7 @@
         android:layout_alignLeft="@+id/buttonsub"
         android:layout_alignStart="@+id/buttonsub"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />-->
+        android:layout_alignParentEnd="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -187,7 +187,7 @@
 
 
 
-    <!--<Button
+    <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -197,7 +197,7 @@
         android:layout_alignLeft="@+id/buttonmul"
         android:layout_alignStart="@+id/buttonmul"
         android:layout_alignRight="@+id/buttonmul"
-        android:layout_alignEnd="@+id/buttonmul" />-->
+        android:layout_alignEnd="@+id/buttonmul" />
 
     <Button
         android:id="@+id/buttoneql"
@@ -215,22 +215,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
+        android:width="0dip"
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:focusableInTouchMode="false"/>
-
-    <Button
-        android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buttoneql"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
-        android:text="Next" />
 
     <Button
         android:text="Calc"
@@ -240,5 +230,14 @@
         android:layout_above="@+id/button2"
         android:layout_toLeftOf="@+id/button2"
         android:layout_toStartOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:layout_above="@+id/button2"
+        android:layout_toLeftOf="@+id/buttonadd"
+        android:layout_toStartOf="@+id/buttonadd" />
 
 </RelativeLayout>

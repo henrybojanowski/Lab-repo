@@ -92,15 +92,21 @@ public class newMain extends AppCompatActivity {
         button9 = (Button) findViewById(R.id.button9);
         button10 = (Button) findViewById(R.id.button10);
         buttonneg=(Button) findViewById(R.id.buttonneg);
-       /* buttonAdd = (Button) findViewById(R.id.buttonadd);
+        buttonAdd = (Button) findViewById(R.id.buttonadd);
         buttonSub = (Button) findViewById(R.id.buttonsub);
         buttonMul = (Button) findViewById(R.id.buttonmul);
-        buttonDivision = (Button) findViewById(R.id.buttondiv);*/
+        buttonDivision = (Button) findViewById(R.id.buttondiv);
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
         buttonNext = (Button) findViewById(R.id.buttonNext);
         edt1 = (EditText) findViewById(R.id.edt1);
         question = (EditText) findViewById(R.id.Question);
+
+        buttonAdd.setEnabled(false);
+        buttonDivision.setEnabled(false);
+        buttonSub.setEnabled(false);
+        buttonMul.setEnabled(false);
+
 
         but1.setEnabled(false); //set this initially to false so that you cannot click it
 
@@ -207,9 +213,11 @@ public class newMain extends AppCompatActivity {
                 }
                 else
                 {
-                    question.setText("you have completed all the questions! great job");
+                    question.setText("You've completed all the questions!");
+                    buttonEqual.setEnabled(false);
+                    buttonNext.setEnabled(false);
                     but1.setEnabled(true);
-                    question.append("press calc");
+                    edt1.setText("press calc");
                 }
             }
         });
@@ -272,14 +280,14 @@ public class newMain extends AppCompatActivity {
 
                     count++;
                     if (answer == mValueTwo) {
-                        question.setText("Correct! press next button for next question");
+                        question.setText("Correct! Press next");
                         buttonNext.setEnabled(true); //now you can click the next button!
                         edt1.setText("");
                         aac++;
                         qac++;
 
                     } else {
-                        question.setText("That's Incorrect! Press Next for another question");
+                        question.setText("That's Incorrect! Press Next");
                         repeat = true;
                         wrongNum++;
                         buttonNext.setEnabled(true);
