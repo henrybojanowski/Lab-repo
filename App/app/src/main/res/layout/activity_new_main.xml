@@ -176,6 +176,16 @@
         android:layout_below="@+id/button9"
         android:layout_alignLeft="@+id/button9"
         android:layout_alignStart="@+id/button9" />
+    <Button
+        android:id="@+id/buttonneg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttoneql"
+        android:layout_toLeftOf="@+id/button7"
+        android:layout_toStartOf="@+id/button7"
+        android:text="(-)" />
+
+
 
     <!--<Button
         style="?android:attr/buttonStyleSmall"

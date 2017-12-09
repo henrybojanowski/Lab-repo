@@ -38,7 +38,7 @@ public class newMain extends AppCompatActivity {
 
     Button button0 , button1 , button2 , button3 , button4 , button5 , button6 ,
             button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
-            buttonMul , button10 , buttonC , buttonEqual, buttonNext ;
+            buttonMul , button10 , buttonC , buttonEqual, buttonNext, buttonneg ;
 
     EditText edt1, question ;
 
@@ -90,6 +90,7 @@ public class newMain extends AppCompatActivity {
         button8 = (Button) findViewById(R.id.button8);
         button9 = (Button) findViewById(R.id.button9);
         button10 = (Button) findViewById(R.id.button10);
+        buttonneg=(Button) findViewById(R.id.buttonneg);
        /* buttonAdd = (Button) findViewById(R.id.buttonadd);
         buttonSub = (Button) findViewById(R.id.buttonsub);
         buttonMul = (Button) findViewById(R.id.buttonmul);
@@ -330,6 +331,13 @@ public class newMain extends AppCompatActivity {
                 edt1.setText("");
             }
         });
+        buttonneg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edt1.setText(edt1.getText()+"-");
+            }
+        });
+
 
         button10.setOnClickListener(new View.OnClickListener() {
             @Override

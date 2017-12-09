@@ -61,7 +61,7 @@ public class first extends AppCompatActivity {
 
         begin();
 
-        
+
 //
 //        button0 = (Button) findViewById(R.id.button0);
 //        button1 = (Button) findViewById(R.id.button1);
