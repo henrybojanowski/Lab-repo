@@ -102,6 +102,7 @@ public class newMain extends AppCompatActivity {
         edt1 = (EditText) findViewById(R.id.edt1);
         question = (EditText) findViewById(R.id.Question);
 
+
         buttonAdd.setEnabled(false);
         buttonDivision.setEnabled(false);
         buttonSub.setEnabled(false);
@@ -216,6 +217,7 @@ public class newMain extends AppCompatActivity {
                     question.setText("You've completed all the questions!");
                     buttonEqual.setEnabled(false);
                     buttonNext.setEnabled(false);
+
                     but1.setEnabled(true);
                     edt1.setText("press calc");
                 }
@@ -272,6 +274,8 @@ public class newMain extends AppCompatActivity {
 //            }
 //        });
 //      Enter should redefine.
+
+
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -279,6 +283,7 @@ public class newMain extends AppCompatActivity {
                     mValueTwo = Float.parseFloat(edt1.getText() + "");
 
                     count++;
+
                     if (answer == mValueTwo) {
                         question.setText("Correct! Press next");
                         buttonNext.setEnabled(true); //now you can click the next button!
@@ -294,6 +299,10 @@ public class newMain extends AppCompatActivity {
                         edt1.setText("");
                         // question.append(QuestionsArray[qac]);
                     }
+                }
+                else if(edt1.getText()==null)
+                {
+
                 }
 //                if(mValueTwo == answer){
 //                    count++;

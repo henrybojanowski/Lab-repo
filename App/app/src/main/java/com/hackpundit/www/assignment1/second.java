@@ -229,6 +229,7 @@ public class second extends AppCompatActivity {
             buttonDivision.setEnabled(false);
             editText2.setText("You got 4 questions wrong. I'm disabling 4 buttons.");
         }
+        newMain.wrongNum=0;
     }
 
 
