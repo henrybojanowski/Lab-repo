@@ -16,7 +16,7 @@ public class second extends AppCompatActivity {
             button7 , button8 , button9 , buttonAdd , buttonSub , buttonDivision ,
             buttonMul , button10 , buttonC , buttonEqual ;
 
-    EditText edt1 ;
+    EditText edt1, editText2 ;
 
     float mValueOne , mValueTwo ;
 
@@ -45,6 +45,7 @@ public class second extends AppCompatActivity {
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEqual = (Button) findViewById(R.id.buttoneql);
         edt1 = (EditText) findViewById(R.id.edt1);
+        editText2 = (EditText) findViewById(R.id.editText2);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +163,7 @@ public class second extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mValueTwo = Float.parseFloat(edt1.getText() + "");
+                editText2.setText("");
 
                 if (mAddition == true){
 
@@ -200,6 +202,30 @@ public class second extends AppCompatActivity {
                 edt1.setText(edt1.getText()+".");
             }
         });
+
+
+        if(newMain.wrongNum == 1){
+            buttonAdd.setEnabled(false);
+            editText2.setText("You got 1 question wrong. I'm disabling 1 button.");
+        }
+        else if(newMain.wrongNum == 2){
+            buttonSub.setEnabled(false);
+            buttonAdd.setEnabled(false);
+            editText2.setText("You got 2 questions wrong. I'm disabling 2 buttons.");
+        }
+        else if (newMain.wrongNum == 3){
+            buttonSub.setEnabled(false);
+            buttonAdd.setEnabled(false);
+            buttonMul.setEnabled(false);
+            editText2.setText("You got 3 questions wrong. I'm disabling 3 buttons.");
+        }
+        else if(newMain.wrongNum == 4){
+            buttonSub.setEnabled(false);
+            buttonAdd.setEnabled(false);
+            buttonMul.setEnabled(false);
+            buttonDivision.setEnabled(false);
+            editText2.setText("You got 4 questions wrong. I'm disabling 4 buttons.");
+        }
     }
 
 

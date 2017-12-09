@@ -54,6 +54,7 @@ public class newMain extends AppCompatActivity {
     boolean mAddition , mSubtract ,mMultiplication ,mDivision, first, correct ;
     int fc = 1, count = 0;
 
+    public static int wrongNum = 0; //count of number of times answer is wrong
 
     public Button but1;
     public void init()
@@ -181,7 +182,7 @@ public class newMain extends AppCompatActivity {
                     question.setText("I want you to answer my math questions");
                     fc = 2;
                 }
-                else if(count < 3)
+                else if(count < 4)
                 {
                     int num1, num2, num3;
                     String[] OperatorArray={"+","-"};
@@ -266,24 +267,25 @@ public class newMain extends AppCompatActivity {
         buttonEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mValueTwo = Float.parseFloat(edt1.getText() + "");
+                if(edt1.getText() != null){
+                    mValueTwo = Float.parseFloat(edt1.getText() + "");
 
-                if(answer==mValueTwo)
-                {
-                    question.setText("Correct! press next button for next question");
-                    buttonNext.setEnabled(true); //now you can click the next button!
-                    edt1.setText("");
-                    aac++;
-                    qac++;
                     count++;
-                }
-                else
-                {
-                    question.setText("That's Incorrect! Press Next for another question");
-                    repeat=true;
-                    buttonNext.setEnabled(true);
-                    edt1.setText("");
-                    // question.append(QuestionsArray[qac]);
+                    if (answer == mValueTwo) {
+                        question.setText("Correct! press next button for next question");
+                        buttonNext.setEnabled(true); //now you can click the next button!
+                        edt1.setText("");
+                        aac++;
+                        qac++;
+
+                    } else {
+                        question.setText("That's Incorrect! Press Next for another question");
+                        repeat = true;
+                        wrongNum++;
+                        buttonNext.setEnabled(true);
+                        edt1.setText("");
+                        // question.append(QuestionsArray[qac]);
+                    }
                 }
 //                if(mValueTwo == answer){
 //                    count++;
