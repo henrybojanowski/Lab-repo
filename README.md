@@ -9,3 +9,6 @@ button will be disabled for every incorrect calculation.
 
 Video describing our project:
 https://youtu.be/7zGCYfGB4Ns
+
+
+when opening in android studio, please select the folder named "FinalApp". DO NOT go within any subdirectiories of FinalApp or else the app will not compile 
